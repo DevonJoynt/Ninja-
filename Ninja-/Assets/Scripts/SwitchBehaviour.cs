@@ -16,6 +16,8 @@ public class SwitchBehaviour : MonoBehaviour
     float switchDelay = 0.2f;
     bool isPressingSwitch = false;
 
+    [SerializeField] InventoryManager.AllItems requiredItem; //need correct key to open door
+
 
     // Assign Data
     void Awake()
@@ -58,17 +60,22 @@ public class SwitchBehaviour : MonoBehaviour
         {
             isPressingSwitch = !isPressingSwitch;
 
-            if (isDoorOpenSwitch && !doorBehaviour.isDoorOpen)
+           
+            if (HasRequiredItem(requiredItem))
             {
-                doorBehaviour.isDoorOpen = !doorBehaviour.isDoorOpen;
+                if (isDoorOpenSwitch && !doorBehaviour.isDoorOpen)
+                {
+                    doorBehaviour.isDoorOpen = !doorBehaviour.isDoorOpen;
+                }
+                else if (isDoorCloseSwitch && doorBehaviour.isDoorOpen)
+                {
+                    doorBehaviour.isDoorOpen = !doorBehaviour.isDoorOpen;
+                }
             }
-            else if (isDoorCloseSwitch && doorBehaviour.isDoorOpen)
-            {
-                doorBehaviour.isDoorOpen = !doorBehaviour.isDoorOpen;
-            }
+                       
         }
     }
-    private void OnTriggerExit2D(Collider2D collision)
+    private void OnTriggerExit2D(Collider2D collision) //controls opening and closing of door with switch
     {
         if (collision.CompareTag("Player"))
         {
@@ -80,5 +87,15 @@ public class SwitchBehaviour : MonoBehaviour
         yield return new WaitForSeconds(waitTime);
         isPressingSwitch = false;
     }
-
+    public bool HasRequiredItem(InventoryManager.AllItems itemRequired)
+    {
+        if (InventoryManager.Instance.inventoryItems.Contains(itemRequired))
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
 }
