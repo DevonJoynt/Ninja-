@@ -29,7 +29,8 @@ public class InventoryManager : MonoBehaviour
     public enum AllItems // list of all available inventory items that can be picked up
     {
         PurpleKey,
-        RedKey
+        RedKey,
+        GreenKey
 
     }
     

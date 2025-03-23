@@ -59,6 +59,8 @@ public class PlayerMovement : MonoBehaviour
 
             Jump();
 
+      
+
 
 
         //set animator parameters 
@@ -70,7 +72,6 @@ public class PlayerMovement : MonoBehaviour
     }
 
     private void Jump()
-
     {
 
         body.velocity = new Vector2(body.velocity.x, speed);
@@ -80,6 +81,7 @@ public class PlayerMovement : MonoBehaviour
         grounded = false;
 
     }
+    
 
     private void OnCollisionEnter2D(Collision2D collision)
 
