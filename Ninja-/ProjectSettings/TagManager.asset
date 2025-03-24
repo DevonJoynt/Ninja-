@@ -9,6 +9,7 @@ TagManager:
   - Weak Point
   - Coin
   - Enemy
+  - Weapon
   layers:
   - Default
   - TransparentFX
