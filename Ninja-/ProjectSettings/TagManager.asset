@@ -10,6 +10,7 @@ TagManager:
   - Coin
   - Enemy
   - Weapon
+  - Obastacle
   layers:
   - Default
   - TransparentFX
@@ -46,4 +47,7 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Obstacle
+    uniqueID: 3091695939
     locked: 0
