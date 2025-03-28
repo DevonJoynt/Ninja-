@@ -2021,7 +2021,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1070818618}
-  respawnPoint: {fileID: 763527007}
+  respawnPoint: {fileID: 1853956875}
 --- !u!114 &180626282
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6039,7 +6039,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1070818618}
-  respawnPoint: {fileID: 763527007}
+  respawnPoint: {fileID: 1853956875}
 --- !u!114 &672274465
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15737,7 +15737,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: -1
+  m_SortingOrder: -2
   m_Sprite: {fileID: -612964629, guid: 6d28f55f1b0572546b2632db94416d69, type: 3}
   m_Color: {r: 0.9716981, g: 0.88461196, b: 0.88461196, a: 1}
   m_FlipX: 0
