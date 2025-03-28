@@ -6,8 +6,8 @@ public class SwitchBehaviour : MonoBehaviour
 {
     [SerializeField] DoorBehaviour doorBehaviour;
 
-    [SerializeField] bool isDoorOpenSwitch;
-    [SerializeField] bool isDoorCloseSwitch;
+    [SerializeField] bool isDoorOpenSwitch; // switch can open door
+    [SerializeField] bool isDoorCloseSwitch;  //switch can close door
 
     float switchSizeY;
     Vector3 switchUpPos;
@@ -31,30 +31,30 @@ public class SwitchBehaviour : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (isPressingSwitch)
+        if (isPressingSwitch) // moves switch down (depresses)
         {
             MoveSwitchDown();
         }
-        else if (!isPressingSwitch)
+        else if (!isPressingSwitch)  // or moves switch back up to original position
         {
             MoveSwitchUp();
         }
     }
-    void MoveSwitchDown()
+    void MoveSwitchDown()  // switch down
     {
         if (transform.position != switchDownPos)
         {
             transform.position = Vector3.MoveTowards(transform.position, switchDownPos, switchSpeed * Time.deltaTime);
         }
     }
-    void MoveSwitchUp()
+    void MoveSwitchUp()  //switch up
     {
         if (transform.position != switchUpPos)
         {
             transform.position = Vector3.MoveTowards(transform.position, switchUpPos, switchSpeed * Time.deltaTime);
         }
     }
-    private void OnTriggerEnter2D(Collider2D collision)  //activates button when jumped o
+    private void OnTriggerEnter2D(Collider2D collision)  //activates button when jumped on
     {
         if (collision.CompareTag("Player"))
         {
@@ -87,7 +87,7 @@ public class SwitchBehaviour : MonoBehaviour
         yield return new WaitForSeconds(waitTime);
         isPressingSwitch = false;
     }
-    public bool HasRequiredItem(InventoryManager.AllItems itemRequired)
+    public bool HasRequiredItem(InventoryManager.AllItems itemRequired) //must have required item to open or close door
     {
         if (InventoryManager.Instance.inventoryItems.Contains(itemRequired))
         {

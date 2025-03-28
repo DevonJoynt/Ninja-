@@ -5,14 +5,14 @@ using UnityEngine;
 public class KeyBehaviour : MonoBehaviour
 {
     [SerializeField] InventoryManager.AllItems itemType;
-    //[SerializeField] SwitchBehaviour switchbehaviour;
+    
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player"))
+        if (collision.CompareTag("Player")) // if tag is marked player, key is added to player inventory
         {
-            //switchbehaviour.DoorLockedStatus();
+           
             InventoryManager.Instance.AddItem(itemType);
-            Destroy(gameObject);
+            Destroy(gameObject);// destroy game object after added to inventory
         }
     }
 }

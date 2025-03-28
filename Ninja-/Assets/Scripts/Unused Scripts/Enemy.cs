@@ -12,7 +12,7 @@ public class Enemy : MonoBehaviour
         health -= damage;
         if (health <= 0)
         {
-            DeathEffect();
+            DeathEffect(); // when health is 0 or less, player dies
             Die();
         }
     }

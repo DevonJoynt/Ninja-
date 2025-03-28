@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyBehaviour : MonoBehaviour
 {
-    public int LifeTotal = 3;
+    public int LifeTotal = 1;
     public int EnemySpeed = 20;
     public Rigidbody2D rb;
 

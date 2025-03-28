@@ -490,7 +490,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pHealth: {fileID: 1070818619}
-  damage: 20
+  damage: 10
 --- !u!114 &62602478
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -924,7 +924,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pHealth: {fileID: 1070818619}
-  damage: 20
+  damage: 10
 --- !u!114 &115211422
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2007,7 +2007,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pHealth: {fileID: 1070818619}
-  damage: 20
+  damage: 10
 --- !u!114 &180626281
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3319,7 +3319,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pHealth: {fileID: 1070818619}
-  damage: 20
+  damage: 10
 --- !u!4 &362042065 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1332886256680386259, guid: ff4d9c52f3f501d49817e349ab763506, type: 3}
@@ -3738,7 +3738,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pHealth: {fileID: 1070818619}
-  damage: 20
+  damage: 10
 --- !u!114 &414151373
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4012,7 +4012,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pHealth: {fileID: 1070818619}
-  damage: 20
+  damage: 10
 --- !u!114 &421227983
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4783,7 +4783,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pHealth: {fileID: 1070818619}
-  damage: 20
+  damage: 10
 --- !u!114 &501542139
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5634,7 +5634,7 @@ Transform:
   m_GameObject: {fileID: 619986552}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2, y: 0.15, z: -0.053216}
+  m_LocalPosition: {x: 2, y: 0.12, z: -0.053216}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -6025,7 +6025,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pHealth: {fileID: 1070818619}
-  damage: 20
+  damage: 10
 --- !u!114 &672274464
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6201,7 +6201,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pHealth: {fileID: 1070818619}
-  damage: 20
+  damage: 10
 --- !u!114 &672900514
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6481,7 +6481,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: -1
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.28969383, g: 0.28831434, b: 0.2924528, a: 1}
+  m_Color: {r: 0.3018868, g: 0.19591546, b: 0.035599854, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -6573,7 +6573,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pHealth: {fileID: 1070818619}
-  damage: 20
+  damage: 10
 --- !u!114 &693755920
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8007,7 +8007,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pHealth: {fileID: 1070818619}
-  damage: 20
+  damage: 10
 --- !u!114 &813107069
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9140,7 +9140,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pHealth: {fileID: 1070818619}
-  damage: 20
+  damage: 10
 --- !u!114 &939864158
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9427,7 +9427,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pHealth: {fileID: 1070818619}
-  damage: 20
+  damage: 10
 --- !u!114 &967382294
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10840,7 +10840,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pHealth: {fileID: 1070818619}
-  damage: 20
+  damage: 10
 --- !u!114 &1103542027
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11602,7 +11602,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pHealth: {fileID: 1070818619}
-  damage: 20
+  damage: 10
 --- !u!114 &1196780033
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12532,7 +12532,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: -1
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.28969383, g: 0.28831434, b: 0.2924528, a: 1}
+  m_Color: {r: 0.3679245, g: 0.2217785, b: 0.078097194, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -12823,7 +12823,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pHealth: {fileID: 1070818619}
-  damage: 20
+  damage: 10
 --- !u!114 &1314230483
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13401,7 +13401,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pHealth: {fileID: 1070818619}
-  damage: 20
+  damage: 10
 --- !u!1001 &1395796745
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14456,7 +14456,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pHealth: {fileID: 1070818619}
-  damage: 20
+  damage: 10
 --- !u!114 &1502889560
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15211,7 +15211,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pHealth: {fileID: 1070818619}
-  damage: 20
+  damage: 10
 --- !u!114 &1533994786
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16006,7 +16006,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pHealth: {fileID: 1070818619}
-  damage: 20
+  damage: 10
 --- !u!114 &1677117843
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17033,7 +17033,7 @@ Transform:
   m_GameObject: {fileID: 1784271971}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 31.09, y: -1.0282999, z: 0.024278121}
+  m_LocalPosition: {x: 31.23, y: -1.0282999, z: 0.024278121}
   m_LocalScale: {x: 2.5, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -18034,7 +18034,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pHealth: {fileID: 1070818619}
-  damage: 20
+  damage: 10
 --- !u!114 &1876289285
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18876,7 +18876,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pHealth: {fileID: 1070818619}
-  damage: 20
+  damage: 10
 --- !u!114 &1959414949
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19896,7 +19896,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: -1
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.5188679, g: 0.33041117, b: 0.33041117, a: 1}
+  m_Color: {r: 0.49056602, g: 0.27405012, b: 0.0763617, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -20379,7 +20379,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pHealth: {fileID: 1070818619}
-  damage: 20
+  damage: 10
 --- !u!114 &2040558735
 MonoBehaviour:
   m_ObjectHideFlags: 0

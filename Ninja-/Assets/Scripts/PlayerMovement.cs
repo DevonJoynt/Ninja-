@@ -6,14 +6,14 @@ public class PlayerMovement : MonoBehaviour
 
 {
 
-    [SerializeField] private float speed;
+    [SerializeField] private float speed; // player movement speed
 
     private Rigidbody2D body;
 
     private Animator anim;
 
     private bool grounded;
-    private bool m_FacingRight;  //added
+    private bool m_FacingRight;  
 
     public CoinManage cm;
 
@@ -55,7 +55,7 @@ public class PlayerMovement : MonoBehaviour
 
 
 
-        if (Input.GetKey(KeyCode.Space) && grounded)
+        if (Input.GetKey(KeyCode.Space) && grounded) // button on keyboard used for jumping
 
             Jump();
 
@@ -92,17 +92,17 @@ public class PlayerMovement : MonoBehaviour
             grounded = true;
 
     }
-    private void Flip()  //added
+    private void Flip()  //flips player left to right and right to left.
     {
-        m_FacingRight = !m_FacingRight;  //added
+        m_FacingRight = !m_FacingRight;  
 
-        transform.Rotate(0f, 180f, 0f);  //added
+        transform.Rotate(0f, 180f, 0f);  
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("Coin"))
         {
-            Destroy(other.gameObject);
+            Destroy(other.gameObject); // coin destroyed after player collects.
             cm.coinCount++;
         }
     }

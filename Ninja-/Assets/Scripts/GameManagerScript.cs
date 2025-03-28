@@ -29,13 +29,13 @@ public class GameManagerScript : MonoBehaviour
             Cursor.lockState = CursorLockMode.Locked;
         }
     }
-    public void gameOver()
+    public void gameOver()  //goes to game over screen when health at 0
     {
         gameOverUI.SetActive(true);
     }
     public void start()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex); // loads scene according ot build index
     }
     public void quit()
     {
