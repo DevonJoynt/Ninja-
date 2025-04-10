@@ -41,5 +41,5 @@ public class GameManagerScript : MonoBehaviour
     {
         Application.Quit();
     }
-    
+
 }

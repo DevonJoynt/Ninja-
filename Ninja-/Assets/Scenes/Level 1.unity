@@ -1450,7 +1450,21 @@ MonoBehaviour:
   doorBehaviour: {fileID: 1600196362}
   isDoorOpenSwitch: 1
   isDoorCloseSwitch: 1
+  switchSpeed: 1
+  switchDelay: 0.2
   requiredItem: 1
+  onSwitchPressed:
+    m_PersistentCalls:
+      m_Calls: []
+  onSwitchReleased:
+    m_PersistentCalls:
+      m_Calls: []
+  onSwitchActivated:
+    m_PersistentCalls:
+      m_Calls: []
+  onSwitchDenied:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &145662345
 GameObject:
   m_ObjectHideFlags: 0
@@ -1512,6 +1526,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coinCount: 0
   coinText: {fileID: 619349656}
+  onCoinCollected:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &145903504
 GameObject:
   m_ObjectHideFlags: 0
@@ -3496,7 +3513,21 @@ MonoBehaviour:
   doorBehaviour: {fileID: 1165394063}
   isDoorOpenSwitch: 1
   isDoorCloseSwitch: 1
+  switchSpeed: 1
+  switchDelay: 0.2
   requiredItem: 2
+  onSwitchPressed:
+    m_PersistentCalls:
+      m_Calls: []
+  onSwitchReleased:
+    m_PersistentCalls:
+      m_Calls: []
+  onSwitchActivated:
+    m_PersistentCalls:
+      m_Calls: []
+  onSwitchDenied:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!61 &381122325
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -9345,6 +9376,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inventoryItems: 
+  onItemAdded:
+    m_PersistentCalls:
+      m_Calls: []
+  onItemRemoved:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &967118386
 GameObject:
   m_ObjectHideFlags: 0
@@ -9666,6 +9703,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemType: 0
+  onKeyCollected:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!61 &976231719
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -10659,6 +10699,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemType: 2
+  onKeyCollected:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!61 &1090396327
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -11455,6 +11498,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isDoorOpen: 0
+  doorSpeed: 10
+  onDoorStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  onDoorOpened:
+    m_PersistentCalls:
+      m_Calls: []
+  onDoorClosed:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1169077875
 GameObject:
   m_ObjectHideFlags: 0
@@ -12982,6 +13035,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isDoorOpen: 0
+  doorSpeed: 10
+  onDoorStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  onDoorOpened:
+    m_PersistentCalls:
+      m_Calls: []
+  onDoorClosed:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!61 &1346696855
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -15652,6 +15715,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isDoorOpen: 0
+  doorSpeed: 10
+  onDoorStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  onDoorOpened:
+    m_PersistentCalls:
+      m_Calls: []
+  onDoorClosed:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!61 &1600196363
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -17052,6 +17125,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemType: 1
+  onKeyCollected:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!61 &1784271974
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -18684,7 +18760,21 @@ MonoBehaviour:
   doorBehaviour: {fileID: 1346696854}
   isDoorOpenSwitch: 1
   isDoorCloseSwitch: 1
+  switchSpeed: 1
+  switchDelay: 0.2
   requiredItem: 0
+  onSwitchPressed:
+    m_PersistentCalls:
+      m_Calls: []
+  onSwitchReleased:
+    m_PersistentCalls:
+      m_Calls: []
+  onSwitchActivated:
+    m_PersistentCalls:
+      m_Calls: []
+  onSwitchDenied:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!61 &1957421678
 BoxCollider2D:
   m_ObjectHideFlags: 0

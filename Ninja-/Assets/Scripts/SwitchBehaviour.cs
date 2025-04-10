@@ -1,93 +1,119 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class SwitchBehaviour : MonoBehaviour
 {
     [SerializeField] DoorBehaviour doorBehaviour;
-
-    [SerializeField] bool isDoorOpenSwitch; // switch can open door
-    [SerializeField] bool isDoorCloseSwitch;  //switch can close door
-
+    [SerializeField] bool isDoorOpenSwitch;
+    [SerializeField] bool isDoorCloseSwitch;
     float switchSizeY;
     Vector3 switchUpPos;
     Vector3 switchDownPos;
-    float switchSpeed = 1f;
-    float switchDelay = 0.2f;
+    [SerializeField] float switchSpeed = 1f;
+    [SerializeField] float switchDelay = 0.2f;
     bool isPressingSwitch = false;
+    [SerializeField] InventoryManager.AllItems requiredItem;
 
-    [SerializeField] InventoryManager.AllItems requiredItem; //need correct key to open door
+    // Add Unity Events
+    [Header("Events")]
+    public UnityEvent onSwitchPressed = new UnityEvent();
+    public UnityEvent onSwitchReleased = new UnityEvent();
+    public UnityEvent onSwitchActivated = new UnityEvent();
+    public UnityEvent onSwitchDenied = new UnityEvent();
 
-
-    // Assign Data
     void Awake()
     {
         switchSizeY = transform.localScale.y / 2;
-
         switchUpPos = transform.position;
         switchDownPos = new Vector3(transform.position.x, transform.position.y - switchSizeY, transform.position.z);
     }
 
-    // Update is called once per frame
     void Update()
     {
-        if (isPressingSwitch) // moves switch down (depresses)
+        if (isPressingSwitch)
         {
             MoveSwitchDown();
         }
-        else if (!isPressingSwitch)  // or moves switch back up to original position
+        else if (!isPressingSwitch)
         {
             MoveSwitchUp();
         }
     }
-    void MoveSwitchDown()  // switch down
+
+    void MoveSwitchDown()
     {
         if (transform.position != switchDownPos)
         {
             transform.position = Vector3.MoveTowards(transform.position, switchDownPos, switchSpeed * Time.deltaTime);
+
+            // Check if switch just finished moving down
+            if (transform.position == switchDownPos)
+            {
+                onSwitchPressed.Invoke();
+            }
         }
     }
-    void MoveSwitchUp()  //switch up
+
+    void MoveSwitchUp()
     {
         if (transform.position != switchUpPos)
         {
             transform.position = Vector3.MoveTowards(transform.position, switchUpPos, switchSpeed * Time.deltaTime);
+
+            // Check if switch just finished moving up
+            if (transform.position == switchUpPos)
+            {
+                onSwitchReleased.Invoke();
+            }
         }
     }
-    private void OnTriggerEnter2D(Collider2D collision)  //activates button when jumped on
+
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
         {
             isPressingSwitch = !isPressingSwitch;
 
-           
             if (HasRequiredItem(requiredItem))
             {
+                // Invoke success event
+                onSwitchActivated.Invoke();
+
                 if (isDoorOpenSwitch && !doorBehaviour.isDoorOpen)
                 {
-                    doorBehaviour.isDoorOpen = !doorBehaviour.isDoorOpen;
+                    // Use the new SetDoorState method instead of directly changing the property
+                    doorBehaviour.SetDoorState(true);
                 }
                 else if (isDoorCloseSwitch && doorBehaviour.isDoorOpen)
                 {
-                    doorBehaviour.isDoorOpen = !doorBehaviour.isDoorOpen;
+                    doorBehaviour.SetDoorState(false);
                 }
             }
-                       
+            else
+            {
+                // Invoke denied event
+                onSwitchDenied.Invoke();
+            }
         }
     }
-    private void OnTriggerExit2D(Collider2D collision) //controls opening and closing of door with switch
+
+    private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
         {
             StartCoroutine(SwitchUpDelay(switchDelay));
         }
     }
+
     IEnumerator SwitchUpDelay(float waitTime)
     {
         yield return new WaitForSeconds(waitTime);
         isPressingSwitch = false;
     }
-    public bool HasRequiredItem(InventoryManager.AllItems itemRequired) //must have required item to open or close door
+
+    public bool HasRequiredItem(InventoryManager.AllItems itemRequired)
     {
         if (InventoryManager.Instance.inventoryItems.Contains(itemRequired))
         {
