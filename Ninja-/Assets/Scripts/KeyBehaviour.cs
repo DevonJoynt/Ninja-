@@ -9,9 +9,14 @@ public class KeyBehaviour : MonoBehaviour
 
     // Add Unity Events
     [Header("Events")]
-    public UnityEvent onKeyCollected = new UnityEvent();
+    public UnityEvent<InventoryManager.AllItems> onKeyCollected = new UnityEvent<InventoryManager.AllItems>();
 
     private bool isCollected = false;
+
+    private void Start()
+    {
+        onKeyCollected.AddListener(InventoryManager.Instance.AddItem);
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -20,10 +25,10 @@ public class KeyBehaviour : MonoBehaviour
             isCollected = true;
 
             // Fire the event
-            onKeyCollected.Invoke();
+            onKeyCollected.Invoke(itemType);
 
             // Add the key to inventory
-            InventoryManager.Instance.AddItem(itemType);
+            
 
             // Hide the key
             SpriteRenderer renderer = GetComponent<SpriteRenderer>();

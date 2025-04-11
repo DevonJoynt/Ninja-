@@ -13,6 +13,11 @@ public class CoinCollector : MonoBehaviour
 
     private bool isCollected = false;
 
+    private void Start()
+    {
+        CoinManage coinManager = FindObjectOfType<CoinManage>();
+        onCollected.AddListener(coinManager.AddCoin);
+    }
     void Update()
     {
         // Optional: rotate the coin
@@ -28,12 +33,13 @@ public class CoinCollector : MonoBehaviour
             // Fire the local event
             onCollected.Invoke();
 
-            // Find and update the coin manager
-            CoinManage coinManager = FindObjectOfType<CoinManage>();
-            if (coinManager != null)
-            {
-                coinManager.AddCoin();
-            }
+            //// Find and update the coin manager
+            //CoinManage coinManager = FindObjectOfType<CoinManage>();
+            //if (coinManager != null)
+            //{
+            //    coinManager.AddCoin();
+            //}
+            
 
             // Hide the coin
             GetComponent<SpriteRenderer>().enabled = false;

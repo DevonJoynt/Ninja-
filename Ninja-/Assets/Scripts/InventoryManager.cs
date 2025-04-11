@@ -19,13 +19,14 @@ public class InventoryManager : MonoBehaviour
     private void Awake()
     {
         Instance = this;
+        onItemAdded.AddListener(inventoryItems.Add);
     }
 
     public void AddItem(AllItems item)
     {
         if (!inventoryItems.Contains(item))
         {
-            inventoryItems.Add(item);
+            //inventoryItems.Add(item);
             // Fire the event
             onItemAdded.Invoke(item);
         }
