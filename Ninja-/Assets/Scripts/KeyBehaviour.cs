@@ -12,7 +12,7 @@ public class KeyBehaviour : MonoBehaviour
     public UnityEvent<InventoryManager.AllItems> onKeyCollected = new UnityEvent<InventoryManager.AllItems>();
 
     private bool isCollected = false;
-
+    // Event Listener
     private void Start()
     {
         onKeyCollected.AddListener(InventoryManager.Instance.AddItem);
