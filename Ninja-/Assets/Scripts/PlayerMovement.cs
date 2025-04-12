@@ -10,12 +10,13 @@ public class PlayerMovement : MonoBehaviour
 
     private Rigidbody2D body;
 
-    private Animator anim;
+    private Animator anim;   //reference to animator component
 
-    private bool grounded;
-    private bool m_FacingRight;  
+    private bool grounded;   //tracks if player is touching ground
 
-    public CoinManage cm;
+    private bool m_FacingRight;   //tracks which direction player is facing
+
+    public CoinManage cm;   //reference to coin manager
 
     private void Awake()
 
@@ -32,12 +33,8 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame 
 
     void Update()
-
     {
-
-
-
-        float horizontalInput = Input.GetAxis("Horizontal");
+        float horizontalInput = Input.GetAxis("Horizontal");  //gets horizonal input axis
 
         body.velocity = new Vector2(Input.GetAxis("Horizontal") * speed, body.velocity.y);
 
@@ -47,11 +44,11 @@ public class PlayerMovement : MonoBehaviour
 
         if (horizontalInput > 0.01f)
 
-            transform.localScale = Vector3.one;
+            transform.localScale = Vector3.one;   //moving right
 
         else if (horizontalInput < -0.01f)
 
-            transform.localScale = new Vector3(-1, 1, 1);
+            transform.localScale = new Vector3(-1, 1, 1);   //moving left
 
 
 
@@ -67,7 +64,7 @@ public class PlayerMovement : MonoBehaviour
 
         anim.SetBool("run", horizontalInput != 0);
 
-        anim.SetBool("grounded", grounded);
+        anim.SetBool("grounded", grounded);  //grounded animation parameter
 
     }
 
@@ -76,9 +73,9 @@ public class PlayerMovement : MonoBehaviour
 
         body.velocity = new Vector2(body.velocity.x, speed);
 
-        anim.SetTrigger("jump");
+        anim.SetTrigger("jump");   // Trigger jump animation
 
-        grounded = false;
+        grounded = false;   // Set grounded to false as player is now in the air
 
     }
     
@@ -87,7 +84,7 @@ public class PlayerMovement : MonoBehaviour
 
     {
 
-        if (collision.gameObject.tag == "Ground")
+        if (collision.gameObject.tag == "Ground")   // enable jumping if player collides with object tagged as "Ground"
 
             grounded = true;
 
@@ -100,7 +97,7 @@ public class PlayerMovement : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("Coin"))
+        if (other.gameObject.CompareTag("Coin"))  //checks if player enters coin trigger
         {
             Destroy(other.gameObject); // coin destroyed after player collects.
             cm.coinCount++;

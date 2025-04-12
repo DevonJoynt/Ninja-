@@ -13,15 +13,15 @@ public class PlayerHealth : MonoBehaviour
 
 {
 
-    public float health;
+    public float health;  //players current health
 
-    public float maxHealth;
+    public float maxHealth;  //maximum possible health
 
-    public Image healthBar;
+    public Image healthBar;   //displays UI image of health
 
 
 
-    private bool isDead;
+    private bool isDead;   //tracks if player has died
 
 
 
@@ -33,7 +33,7 @@ public class PlayerHealth : MonoBehaviour
 
     {
 
-        maxHealth = health;
+        maxHealth = health;   //sets manimum health equal to starting health
 
     }
 
@@ -49,15 +49,15 @@ public class PlayerHealth : MonoBehaviour
 
 
 
-        if (health <= 0 && !isDead)
+        if (health <= 0 && !isDead)  //check for death condition
 
         {
 
             isDead = true;
 
-            gameObject.SetActive(false);
+            gameObject.SetActive(false);   //disable player object
 
-            gameManager.gameOver();
+            gameManager.gameOver();   //triggers game over screen
 
             Debug.Log("Dead");
 

@@ -5,18 +5,18 @@ using UnityEngine;
 
 public class MovingTrap : MonoBehaviour
 {
-    public float speed;
-    Vector3 targetPos;
+    public float speed;   //trap movement speed
+    Vector3 targetPos;   //target position trap moving towards
 
-    public GameObject ways;
+    public GameObject ways;   //gameobject that hold waypoints
     public Transform[] wayPoints;
     int pointIndex;
     int pointCount;
-    int direction = 1;
+    int direction = 1;  //direction of waypoint movement
 
     private void Awake()
     {
-        wayPoints = new Transform[ways.transform.childCount];
+        wayPoints = new Transform[ways.transform.childCount];   // Initialize waypoints array
         for (int i = 0; i < ways.gameObject.transform.childCount; i++)
         {
             wayPoints[i] = ways.transform.GetChild(i).gameObject.transform;
@@ -24,27 +24,27 @@ public class MovingTrap : MonoBehaviour
     }
     private void Start()
     {
-        pointCount = wayPoints.Length;
+        pointCount = wayPoints.Length;   // Stores total number of waypoints
         pointIndex = 1;
-        targetPos = wayPoints[pointIndex].transform.position;
+        targetPos = wayPoints[pointIndex].transform.position;   // Set the initial target position
     }
     private void Update()
     {
         var step = speed * Time.deltaTime;
-        transform.position = Vector3.MoveTowards(transform.position, targetPos, step);
+        transform.position = Vector3.MoveTowards(transform.position, targetPos, step);  // Move trap toward current target position
 
-        if (transform.position == targetPos)
+        if (transform.position == targetPos)   // Move to next waypoint when trap has reached current waypoint  
         {
             NextPoint();
         }
     }
     void NextPoint()
     {
-        if (pointIndex == pointCount - 1)  //arrived at last point
+        if (pointIndex == pointCount - 1)  //arrived at last point - reverse direction
         {
             direction = -1;
         }
-        if (pointIndex == 0)  // arrived at first point
+        if (pointIndex == 0)  // arrived at first point - reverse direction
         {
             direction = 1;
         }
