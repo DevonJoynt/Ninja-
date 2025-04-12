@@ -7,16 +7,17 @@ public class CoinCollector : MonoBehaviour
 {
     // Unity Event for this specific coin
     [Header("Events")]
-    public UnityEvent onCollected = new UnityEvent();
+    public UnityEvent onCollected = new UnityEvent();   //fires when specific coin collected
 
-    [SerializeField] private float rotateSpeed = 50f;
+    [SerializeField] private float rotateSpeed = 50f;    //controls speed of roataing coin
 
-    private bool isCollected = false;
+    private bool isCollected = false;  //prevents coin from being collected more than once
 
     private void Start()
     {
-        CoinManage coinManager = FindObjectOfType<CoinManage>();
-        onCollected.AddListener(coinManager.AddCoin);
+        CoinManage coinManager = FindObjectOfType<CoinManage>();   //find coin manager in scene
+        //listen for collection events
+        onCollected.AddListener(coinManager.AddCoin);   //when the coin is collected the counter gets updated
     }
     void Update()
     {
@@ -26,9 +27,9 @@ public class CoinCollector : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if (!isCollected && collision.CompareTag("Player"))
+        if (!isCollected && collision.CompareTag("Player")) //only collects coin if not collected
         {
-            isCollected = true;
+            isCollected = true;   //marks coin as collected
 
             // Fire the local event
             onCollected.Invoke();
@@ -43,6 +44,8 @@ public class CoinCollector : MonoBehaviour
 
             // Hide the coin
             GetComponent<SpriteRenderer>().enabled = false;
+
+            //prevents more collection
             GetComponent<Collider2D>().enabled = false;
 
             // Destroy the coin

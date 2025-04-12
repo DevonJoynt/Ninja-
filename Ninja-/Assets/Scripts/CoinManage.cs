@@ -9,29 +9,30 @@ public class CoinEvent : UnityEvent<int> { }
 
 public class CoinManage : MonoBehaviour
 {
-    public int coinCount;
-    public Text coinText;
+    public int coinCount;  //tracks total coins collected
+    public Text coinText;   //text that displays coin count
 
     // Add Unity Event
     [Header("Events")]
-    public CoinEvent onCoinCollected = new CoinEvent();
+    public CoinEvent onCoinCollected = new CoinEvent(); //event fires when coin is collected passing updated count to listener
 
     void Start()
     {
-        // Initialize UI
+        // Initialize UI - shows 0 coins at start
         UpdateCoinText();
     }
 
     void Update()
     {
-        UpdateCoinText();
+        UpdateCoinText();   //update with current coin count
     }
 
     public void AddCoin()
     {
-        coinCount++;
-        // Fire the event
-        onCoinCollected.Invoke(coinCount);
+        coinCount++;   //increase total coin count
+       
+        onCoinCollected.Invoke(coinCount);    // Fire the event with updated count
+
         UpdateCoinText();
     }
 

@@ -5,25 +5,26 @@ using UnityEngine.SceneManagement;
 
 public class GameManagerScript : MonoBehaviour
 {
-    [SerializeField] public GameObject gameOverUI;
-    public GameObject player;
+    [SerializeField] public GameObject gameOverUI;   //Game over UI panel shows when player dies
+
+    public GameObject player;   //references player
 
     // Start is called before the first frame update
     void Start()
     {
-        Cursor.visible = false;
+        Cursor.visible = false;   //hide cursor during gameplay
         Cursor.lockState = CursorLockMode.Locked;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (gameOverUI.activeInHierarchy)
+        if (gameOverUI.activeInHierarchy)   //show cursor when game over screen active
         {
             Cursor.visible = true;
             Cursor.lockState = CursorLockMode.None;
         }
-        else
+        else   //hide cursor during normal gameplay
         {
             Cursor.visible = false;
             Cursor.lockState = CursorLockMode.Locked;
@@ -37,7 +38,7 @@ public class GameManagerScript : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex); // loads scene according ot build index
     }
-    public void quit()
+    public void quit()   //exits application
     {
         Application.Quit();
     }
